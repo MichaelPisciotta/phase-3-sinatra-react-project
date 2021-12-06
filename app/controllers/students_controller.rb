@@ -1,13 +1,16 @@
+require 'pry'
+
 class StudentsController < ApplicationController
     set :default_content_type, 'application/json'
     
 
-    get "/students" do
+  get "/students" do
+    # binding.pry
       Student.all.to_json(include: [:notes])
   end
 
   post "/students" do
-      student = Student.create(name: params[:name], grade: params[:grade])
+      student = Student.create(name: params[:name])
       student.to_json
   end
 
