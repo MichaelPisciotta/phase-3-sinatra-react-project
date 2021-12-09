@@ -1,14 +1,15 @@
+
 class NotesController < ApplicationController
     set :default_content_type, 'application/json'
     
     get "/notes" do
       Note.all.to_json(include: [:student])
-  end
+    end
 
     post "/notes" do
-    note = Note.create(name: params[:name], description: params[:description], student_id: params[:student_id])
+    note = Note.create(title: params[:title], description: params[:description], student_id: params[:student_id])
     note.to_json
-  end
+    end
 
     delete "/notes/:id" do
     #binding.pry
@@ -16,7 +17,7 @@ class NotesController < ApplicationController
     note.destroy
     note.to_json
      
-  end 
+    end 
     
   
   end

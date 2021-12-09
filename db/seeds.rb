@@ -1,8 +1,8 @@
 puts "🌱 Seeding spices..."
 
-kev = Student.create(name: "kev", grade: 10)
-Note.create(name:"kev note", description: "first note", student_id: kev.id)
+kev = Student.create(name: "kevin Perez")
+Note.create(title:"kevin's note", description: "first note", student_id: kev.id)
 
-kev.notes.create(name: "second note", description: "another note")
+kev.notes.create(title: "kevin's second note", description: "kevin's second note")
 
 puts "✅ Done seeding!"
