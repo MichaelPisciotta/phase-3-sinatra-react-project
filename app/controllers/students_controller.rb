@@ -11,7 +11,7 @@ class StudentsController < ApplicationController
 
   post "/students" do
       student = Student.create(name: params[:name])
-      student.to_json
+      student.to_json(include: [:notes])
   end
 
 
