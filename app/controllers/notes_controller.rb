@@ -7,8 +7,8 @@ class NotesController < ApplicationController
     end
 
     post "/notes" do
-    note = Note.create(title: params[:title], description: params[:description], student_id: params[:student_id])
-    note.to_json(include: [:student])
+      note = Note.create(title: params[:title], description: params[:description], student_id: params[:student_id])
+      note.to_json(include: [:student])
     end
 
     delete "/notes/:id" do
