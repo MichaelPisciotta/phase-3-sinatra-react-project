@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_12_06_214135) do
 
   create_table "students", force: :cascade do |t|
     t.string "name"
+    t.string "image_url"
   end
 
 end

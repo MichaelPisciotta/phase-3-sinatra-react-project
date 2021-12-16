@@ -9,8 +9,12 @@ class StudentsController < ApplicationController
       Student.all.to_json(include: [:notes])
   end
 
+  get "/students/abc" do
+    Student.all.order("name").to_json
+  end
+
   post "/students" do
-      student = Student.create(name: params[:name])
+      student = Student.create(name: params[:name], image_url: params[:image_url])
       student.to_json(include: [:notes])
   end
 
@@ -22,6 +26,5 @@ class StudentsController < ApplicationController
       student.to_json
        
   end 
-    
   
   end

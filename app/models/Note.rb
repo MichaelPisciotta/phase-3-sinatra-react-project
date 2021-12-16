@@ -8,4 +8,7 @@ class Note < ActiveRecord::Base
     def student_name
         student.try(:name)
     end
+
+   
 end
+
